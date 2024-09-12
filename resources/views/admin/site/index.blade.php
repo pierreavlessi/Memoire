@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>PIGIER_ACAD</title>
+    <title>ENA_BENIN</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logo-pigier.PNG') }}">
 
     <!-- Stylesheet -->
@@ -81,7 +81,7 @@
 
                         <!-- Top Contact Info -->
                         <div class="top-contact-info d-flex align-items-center">
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title=""><img src="{{ asset('assets/import2/img/core-img/placeholder.png') }}" alt=""> <span>PIGIER-BENIN, Carré 1270, Rue 320 AGONTINKON-AYIDOTE, Cotonou, Bénin.</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title=""><img src="{{ asset('assets/import2/img/core-img/placeholder.png') }}" alt=""> <span>ENA-BENIN, Campus Abomey-calavi, B.P 990, Cotonou, Bénin.</span></a>
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title=""><img src="{{ asset('assets/import2/img/core-img/message.png') }}" alt=""> <span>pigierbenin@gmail.com</span></a>
                         </div>
                     </div>
@@ -112,8 +112,8 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="#">Accueil</a></li>
-                                    <li><a href="{{ route('login.user') }}">Faire une Demande</a></li>
-                                    <li><a href="#pieces-disponibles">Pieces Disponibles</a></li>
+                                    <li><a href="{{ route('login.user') }}">Gestion</a></li>
+                                    <li><a href="#pieces-disponibles">Téléchargement</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
@@ -122,7 +122,7 @@
 
                         <!-- Contact -->
                         <div class="contact">
-                            <a href="tel:+22997846728"><img src="{{ asset('assets/import2/img/core-img/call2.png') }}" alt=""> +22997846728</a>
+                            <a href="tel:+22996417770"><img src="{{ asset('assets/import2/img/core-img/call2.png') }}" alt=""> +22997846728</a>
                         </div>
                     </nav>
                 </div>
@@ -137,12 +137,16 @@
             <div class="flex-container">
                 <div class="content">
                     <div class="section-heading">
+                       
                         <div class="line"></div>
-                        <h2>PIGIER_ACAD</h2>
+                        <h2>ENA BENIN</h2>
                     </div>
-                    <h6> Bienvenue sur notre plateforme de retrait de pièces académiques et administratives !</h6>
+                    <h2>GESTCLASS</h2>
+                    <h6> Bienvenue sur notre plateforme de gestion des salles de cours à l'ENA !</h6>
                     <a href="{{ route('login.user') }}" class="btn credit-btn mt-50">Se connecter</a>
+                   
                 </div>
+                
                 <img src="{{ asset('assets/import2/img/bg-img/i2.jpg') }}" alt="Image" class="custom-img">
             </div>
         </div>
@@ -162,8 +166,8 @@
             <div class="section-heading white">
                 <div class="line"></div>
             </div>
-            <h6>"La seule façon de rester leader, donc d'être suivi, c'est de courir plus vite que les autres. On n'avance pas avec les idées fixes"</h6>
-            <h7>Gervais Pigier</h7>
+            <h6>"Vivier d'Expetise, Depuis 1984"</h6>
+            <h7>UAC ENA</h7>
             <div class="row">
                 <!-- Single Skills Area -->
                 <div class="col-md-3">

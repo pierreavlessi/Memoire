@@ -9,6 +9,7 @@ use App\Http\Controllers\UserManagementController;
 //use App\Http\Controllers\GeolocalisationController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SuiviDemandeController;
+use App\Http\Controllers\SalleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -93,6 +94,27 @@ Route::get('role/delete/{id}', [App\Http\Controllers\UserManagementController::c
 
 Route::get('/getMontant', [App\Http\Controllers\PieceController::class, 'getMontant']); // Liste departement
 
+//Important -----------------------------Salles-----------------------------------------
+//Route::get('profils/new', [App\Http\Controllers\ProfilController::class, 'create'])->name('profils/new'); //New departement
+Route::get('salle/new', [App\Http\Controllers\SalleController::class, 'create'])->name('salle/new'); // Liste departement
+Route::get('salles', [App\Http\Controllers\SalleController::class, 'index'])->name('salles'); // Liste departement
+Route::post('admin/salle/save', [App\Http\Controllers\SalleController::class, 'save'])->name('salle/save'); //Enregistrer departement
+//Route::post('departements/edit', [App\Http\Controllers\DepartementController::class, 'edit'])->name('departements/edit'); //Enregistrer departement
+Route::get('admin/salle/update/{id}', [App\Http\Controllers\SalleController::class, 'update']); //Modifier departement
+Route::post('salle/edit', [App\Http\Controllers\SalleController::class, 'edit'])->name('salle/edit'); //Enregistrer departement
+Route::get('admin/salle/delete/{id}', [App\Http\Controllers\SalleController::class, 'delete']);
+
+
+//Important -----------------------------Programmations-----------------------------------------
+//Route::get('profils/new', [App\Http\Controllers\ProfilController::class, 'create'])->name('profils/new'); //New departement
+Route::get('programmation/new', [App\Http\Controllers\ProgrammationController::class, 'create'])->name('programmation/new'); // Liste departement
+Route::get('prorammation', [App\Http\Controllers\ProgrammationController::class, 'index'])->name('prorammation'); // Liste departement
+Route::post('admin/programmation/save', [App\Http\Controllers\ProgrammationController::class, 'save'])->name('programmation/save'); //Enregistrer departement
+//Route::post('departements/edit', [App\Http\Controllers\DepartementController::class, 'edit'])->name('departements/edit'); //Enregistrer departement
+Route::get('admin/prorammation/update/{id}', [App\Http\Controllers\ProgrammationController::class, 'update']); //Modifier departement
+Route::post('programmation/edit', [App\Http\Controllers\ProgrammationController::class, 'edit'])->name('programmation/edit'); //Enregistrer departement
+Route::get('admin/programmation/delete/{id}', [App\Http\Controllers\ProgrammationController::class, 'delete']);
+
 
 Route::group(['middleware' => ['role:admin,super_admin']], function () {
 
@@ -134,6 +156,11 @@ Route::post('admin/piece/save', [App\Http\Controllers\PieceController::class, 's
 Route::get('admin/piece/update/{id}', [App\Http\Controllers\PieceController::class, 'update']); //Modifier departement
 Route::post('piece/edit', [App\Http\Controllers\PieceController::class, 'edit'])->name('piece/edit'); //Enregistrer departement
 Route::get('admin/piece/delete/{id}', [App\Http\Controllers\PieceController::class, 'delete']);
+
+
+
+
+
 
 //Important -----------------------------Liste des demandes-----------------------------------------
 Route::get('liste/demandes', [App\Http\Controllers\DemandeController::class, 'indexAdmin'])->name('demandes/admin'); // Liste departement

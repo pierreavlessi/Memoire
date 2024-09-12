@@ -30,7 +30,7 @@
                                         <div class="lnr lnr-user display-4 text-primary"></div>
                                         <div class="ml-3">
                                             <div class="small">
-                                                <h6>Total étudiants <br> <br> </h6>
+                                                <h6>Total Salles <br> <br> </h6>
                                             </div>
                                             <div class="text-large">{{ $totalEtudiant }}</div>
                                         </div>
@@ -40,7 +40,7 @@
                                         @if (auth()->user()->role_name == 'admin' || auth()->user()->role_name == 'super_admin')
                                             <a href="{{ route('admin/users') }}">Voir plus</a>
                                         @else
-                                            <a href="{{ route('register') }}">Inscription</a>
+                                            <a href="{{ route('register') }}">Salles</a>
                                         @endif
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                                         <div class="lnr lnr-user display-4 text-primary"></div>
                                         <div class="ml-3">
                                             <div class="small">
-                                                <h6>Total enseignants <br> <br> </h6>
+                                                <h6>Total Programmations<br> <br> </h6>
                                             </div>
                                             <div class="text-large">{{ $totalEnseignant }}</div>
                                         </div>
@@ -63,7 +63,7 @@
                                         @if (auth()->user()->role_name == 'admin' || auth()->user()->role_name == 'super_admin')
                                             <a href="{{ route('admin/users') }}">Voir plus</a>
                                         @else
-                                            <a href="{{ route('register') }}">Inscription</a>
+                                            <a href="{{ route('register') }}">Programmations</a>
                                         @endif
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@
                                         @if (auth()->user()->role_name == 'admin' || auth()->user()->role_name == 'super_admin')
                                             <a href="{{ route('demandes') }}">Voir plus</a>
                                         @else
-                                            <a href="{{ route('demandes/new') }}">Faire une demande</a>
+                                            <a href="{{ route('demandes/new') }}">Gestion Salles</a>
                                         @endif
                                     </div>
                                 </div>

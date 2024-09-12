@@ -40,7 +40,7 @@
                                         <th>Description</th>
                                         <th>Statut</th>
                                         <th class="text-center">Action</th>
-
+ 
                                     </tr>
                                 </thead>
                                 <tbody>
