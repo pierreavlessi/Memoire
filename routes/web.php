@@ -24,9 +24,9 @@ use App\Http\Controllers\SalleController;
 Auth::routes();
 
 
-Route::get('/dashboard', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('dashboard');
-Route::get('/', [App\Http\Controllers\Admin\SiteController::class, 'home'])->name('site');
-Route::get('/error-site', [App\Http\Controllers\Admin\SiteController::class, 'error'])->name('error-site');
+// Route::get('/dashboard', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('dashboard');
+// Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('site');
+Route::get('/error-site', [App\Http\Controllers\Admin\HomeController::class, 'error'])->name('error-site');
 
 
 
@@ -42,11 +42,12 @@ Route::get('user-pagination', function () {
 });
 
 Route::get('dashboard', [App\Http\Controllers\Admin\HomeController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->middleware('auth')->name('dashboard');
 Route::post('admin', [App\Http\Controllers\Admin\HomeController::class, 'update'])->name('admin/home');
 
 
 // -----------------------------login Admin-----------------------------------------
-Route::get('login/user', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login.user');
+Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'authenticate'])->name('authentificate');
 Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 

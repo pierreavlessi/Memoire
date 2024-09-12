@@ -3,7 +3,7 @@
     <!-- Brand demo (see assets/css/demo/demo.css) -->
     <div class="app-brand demo ">
         <span class=" demo ">
-            <img width="30" src="{{ asset('assets/images/logo-pigier.PNG') }}" alt="Brand Logo" class="img-fluid">
+            <img width="30" src="{{ asset('assets/images/logo-ena.PNG') }}" alt="Brand Logo" class="img-fluid">
 
         </span>
         {{-- <a href="#" class="app-brand-text demo sidenav-text font-weight-normal ml-2"
@@ -14,7 +14,7 @@
     </div>
 
     {{-- <div class="sidenav-divider mt-0 " style="margin-top: -29px !important"></div> --}}
-    <div class="sidenav-divider mt-0"></div>
+    <div class="sidenav-divider mt-0 " style="background-color: white !important"></div>
 
 
     <!-- Links -->
@@ -260,6 +260,7 @@
 <!-- [ Layout sidenav ] End -->
 <style>
     .bg-custom-color {
-        background-color: #003679;
+        /* background-color: #003679; */
+        background: linear-gradient(to bottom, #278d27, #014f01); /* Dégradé du haut vers le bas */
     }
 </style>

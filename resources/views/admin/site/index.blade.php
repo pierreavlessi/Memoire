@@ -10,7 +10,7 @@
 
     <!-- Title -->
     <title>ENA_BENIN</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logo-pigier.PNG') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logo-ena.PNG') }}">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/import2/style.css') }}">
