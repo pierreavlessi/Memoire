@@ -58,7 +58,7 @@
                     </div>
                     <!-- [ Logo ] End -->
                     <br>
-                    <h5 class="m-auto"> Bienvenu à PIGIER Acad</h5>
+                    <h5 class="m-auto text-success"> Connexion</h5>
                     @if(session()->has('error'))
                         <div class="text-danger">
                             {{ session()->get('error') }}

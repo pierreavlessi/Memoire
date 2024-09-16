@@ -47,9 +47,10 @@ class LoginController extends Controller
 
         if (Auth::check()) {
             return redirect()->route('dashboard');
+        }else{
+            return view('auth.login');
         }
-
-        return view('auth.login');
+        
     }
 
     public function authenticate(Request $request)

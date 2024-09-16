@@ -3,7 +3,7 @@
 <html lang="en" class="material-style layout-fixed">
 
 <head>
-    <title> ENA BENIN</title>
+    <title> Gestion des salles - ENA BENIN</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,7 +15,7 @@
     <!-- survey-JS -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Google fonts -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logo-pigier.PNG') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logo-ena.PNG') }}">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
@@ -99,7 +99,7 @@
                     <!-- Brand demo (see assets/css/demo/demo.css) -->
                     <a href="index.html" class="navbar-brand app-brand demo d-lg-none py-0 mr-4">
                         <span class="app-brand-logo demo">
-                            <img src="{{ asset('assets/images/logo-pigier.PNG') }}" alt="Brand Logo" class="img-fluid"
+                            <img src="{{ asset('assets/images/logo-ena.PNG') }}" alt="Brand Logo" class="img-fluid"
                                 width="30">
 
                         </span>
@@ -317,7 +317,7 @@
                         class="container-fluid d-flex flex-wrap justify-content-between text-center container-p-x pb-3">
                         <div class="pt-3">
                             <span class="footer-text font-weight-semibold">&copy; <a href="http://star-labs.bj/"
-                                    class="footer-link" target="_blank">PIGIER DOC - All right reserved</a></span>
+                                    class="footer-link" target="_blank">ENA DOC - All right reserved</a></span>
                         </div>
                         <div>
                             {{-- <a href="javascript:" class="footer-link pt-3"></a> --}}

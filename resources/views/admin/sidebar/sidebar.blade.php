@@ -3,7 +3,7 @@
     <!-- Brand demo (see assets/css/demo/demo.css) -->
     <div class="app-brand demo ">
         <span class=" demo ">
-            <img width="30" src="{{ asset('assets/images/logo-pigier.PNG') }}" alt="Brand Logo" class="img-fluid">
+            <img width="30" src="{{ asset('assets/images/logo-ena.PNG') }}" alt="Brand Logo" class="img-fluid">
 
         </span>
         {{-- <a href="#" class="app-brand-text demo sidenav-text font-weight-normal ml-2"
@@ -14,7 +14,7 @@
     </div>
 
     {{-- <div class="sidenav-divider mt-0 " style="margin-top: -29px !important"></div> --}}
-    <div class="sidenav-divider mt-0"></div>
+    <div class="sidenav-divider mt-0 " style="background-color: white !important"></div>
 
 
     <!-- Links -->
@@ -352,31 +352,7 @@
                 </li>
             </ul>
         </li>
-        <li class="sidenav-item">
-            <a href="javascript:" class="sidenav-link sidenav-toggle"style="color: white;">
-                {{-- <i class="sidenav-icon feather icon-clipboard"></i> --}}
-                <i class="sidenav-icon feather icon-file"style="color: white;"></i>
-                <div style="color: white;">Enseignant</div>
-            </a>
-            <ul class="sidenav-menu">
-                <li>
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salle/new') }}" class="sidenav-link "style="color: white;">
-                        {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
-                        <i class="sidenav-icon feather icon-plus"style="color: white;"></i>
-                        <div>Ajouter</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salles') }}" class="sidenav-link"style="color: white;">
-                        <i class="sidenav-icon feather icon-menu"style="color: white;"></i>
-                        <div>Liste</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="sidenav-item">
+               <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle"style="color: white;">
                 {{-- <i class="sidenav-icon feather icon-clipboard"></i> --}}
                 <i class="sidenav-icon feather icon-file"style="color: white;"></i>
@@ -449,27 +425,14 @@
             </li>
         </li>
          <ul class="sidenav-menu">
-                <li>
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salle/new') }}" class="sidenav-link "style="color: white;">
-                        {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
-                        <i class="sidenav-icon feather icon-plus"style="color: white;"></i>
-                        <div>Ajouter</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salles') }}" class="sidenav-link"style="color: white;">
-                        <i class="sidenav-icon feather icon-menu"style="color: white;"></i>
-                        <div>Liste</div>
-                    </a>
-                </li>
-            </ul>
+               
+                         </ul>
     </ul>
 </div>
 <!-- [ Layout sidenav ] End -->
 <style>
     .bg-custom-color {
-        background-color: #003679;
+        /* background-color: #003679; */
+        background: linear-gradient(to bottom, #278d27, #014f01); /* Dégradé du haut vers le bas */
     }
 </style>

@@ -24,9 +24,9 @@ use App\Http\Controllers\SalleController;
 Auth::routes();
 
 
-Route::get('/dashboard', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('dashboard');
-Route::get('/', [App\Http\Controllers\Admin\SiteController::class, 'home'])->name('site');
-Route::get('/error-site', [App\Http\Controllers\Admin\SiteController::class, 'error'])->name('error-site');
+// Route::get('/dashboard', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('dashboard');
+// Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('site');
+Route::get('/error-site', [App\Http\Controllers\Admin\HomeController::class, 'error'])->name('error-site');
 
 
 
@@ -42,11 +42,12 @@ Route::get('user-pagination', function () {
 });
 
 Route::get('dashboard', [App\Http\Controllers\Admin\HomeController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->middleware('auth')->name('dashboard');
 Route::post('admin', [App\Http\Controllers\Admin\HomeController::class, 'update'])->name('admin/home');
 
 
 // -----------------------------login Admin-----------------------------------------
-Route::get('login/user', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login.user');
+Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'authenticate'])->name('authentificate');
 Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
@@ -114,6 +115,16 @@ Route::post('admin/programmation/save', [App\Http\Controllers\ProgrammationContr
 Route::get('admin/prorammation/update/{id}', [App\Http\Controllers\ProgrammationController::class, 'update']); //Modifier departement
 Route::post('programmation/edit', [App\Http\Controllers\ProgrammationController::class, 'edit'])->name('programmation/edit'); //Enregistrer departement
 Route::get('admin/programmation/delete/{id}', [App\Http\Controllers\ProgrammationController::class, 'delete']);
+
+//Important -----------------------------Activites-----------------------------------------
+//Route::get('profils/new', [App\Http\Controllers\ProfilController::class, 'create'])->name('profils/new'); //New departement
+Route::get('activite/new', [App\Http\Controllers\activiteController::class, 'create'])->name('activite/new'); // Liste departement
+Route::get('activite', [App\Http\Controllers\activiteController::class, 'index'])->name('activite'); // Liste departement
+Route::post('admin/activite/save', [App\Http\Controllers\activiteController::class, 'save'])->name('activite/save'); //Enregistrer departement
+//Route::post('departements/edit', [App\Http\Controllers\DepartementController::class, 'edit'])->name('departements/edit'); //Enregistrer departement
+Route::get('admin/activite/update/{id}', [App\Http\Controllers\activiteController::class, 'update']); //Modifier departement
+Route::post('activite/edit', [App\Http\Controllers\activiteController::class, 'edit'])->name('activite/edit'); //Enregistrer departement
+Route::get('admin/activite/delete/{id}', [App\Http\Controllers\activiteController::class, 'delete']);
 
 
 Route::group(['middleware' => ['role:admin,super_admin']], function () {

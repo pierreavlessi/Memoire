@@ -28,7 +28,12 @@ class HomeController extends Controller
 
     public function home()
     {
-        return view('admin/site/index');
+        return view('admin/home');
+    }
+    
+    public function error()
+    {
+        return view('admin/error-pages/error-404');
     }
 
     public function index()
