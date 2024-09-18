@@ -7,7 +7,10 @@
             color: red;
             border-color: red;
             font-weight: 900;
+            
         }
+        .btn-custom:hover {
+            background-color: #005a3c; }
     </style>
 
     <!-- [ Layout content ] Start -->
@@ -52,49 +55,56 @@
                             <form id="validation" action="{{ route('salle/save') }}" method="POST">
                                 {{ csrf_field() }}
 
-                                <div class="form-group row">
-
-                                    <label for="libelle_salle">Libelle Salle:</label>
-                                    <input type="text" name="libelle_salle" id="libelle_salle" required>
-
-                                    <label for="capacite">Capacité:</label>
-                                    <input type="number" name="capacite" id="capacite" required>
-
-                                    <label for="equipement">Équipement:</label>
-                                    <input type="text" name="equipement" id="equipement">
-                                </div>
-                                <div class="form-group row">
-                                    <label for="type_salle">Type Salle:</label>
-                                    <input type="text" name="type_salle" id="type_salle" required>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="profil"
-                                            style="text-transform: uppercase;" name="" placeholder="" required>
-                                        <div class="clearfix"></div>
+                                <div class="row lg-12">
+                                    <div class="col-md-6 col-lg-6">
+                                        <label for="libelle_salle">Libelle Salle:</label>
+                                      <input type="text" class="form-control" placeholder="" aria-label="">
                                     </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <label for="capacite">Capacité:</label>
+                                      <input type="text" class="form-control" placeholder="" aria-label="">
+                                    </div>
+                                  </div>
+                                  
+                                <div class="row lg-12">
+                                    <div class="col-md-6 col-lg-6">
+                                        <label for="libelle_salle">Equipement :</label>
+                                      <input type="text" class="form-control" placeholder="" aria-label="">
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <label for="capacite">Type de salle  :</label>
+                                      <input type="text" class="form-control" placeholder="" aria-label="">
+                                    </div>
+                                  </div>
+                                  <div class="row lg-12">
+                                    <div class="col-md-6 col-lg-6">
+                                        <label for="libelle_salle">Batiment :</label>
+                                      <input type="text" class="form-control" placeholder="" aria-label="">
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <label for="capacite">Responsable :</label>
+                                      <input type="text" class="form-control" placeholder="" aria-label="">
+                                    </div>
+                                  </div>
+
+                                  <div class="row l-12">
+                                    <div class="col-md-6 col-lg-6">
+                                        <label for="disponibilite">Disponibilité :</label>
+                                        <input type="checkbox" name="disponibilite" id="disponibilite" value="1">
+                                       
+                                    </div>
+                                  </div>                                     
+                                  
                                 </div>
-                                <div class="form-group row">
-                                    <label for="disponibilite">Disponibilité:</label>
-                                    <input type="checkbox" name="disponibilite" id="disponibilite" value="1">
 
-                                    <label for="batiment">Bâtiment:</label>
-                                    <input type="text" name="batiment" id="batiment" required>
-                                    <label for="responsable">Responsable:</label>
-                                    <input type="text" name="responsable" id="responsable">
-                                </div>
-                                <div class="form-group row">
-
-
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-form-label col-sm-2 text-sm-right"></label>
-                                    <div class="row p-1"> <!-- Utilisation de Flexbox -->
-
-
-                                        <button type="reset" class="btn btn-secondary">Annuler</button>
-                                        <!-- Bouton "Annuler" à gauche -->
-                                        <button type="submit" class="btn btn-primary">Enrégistrer</button>
-                                        <!-- Bouton "Enregistrer" à droite -->
+                                <div class="row ">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-success mx-auto"
+                                            style="text-align: center  !important;" >Enrégistrer</button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-success mx-auto "
+                                            style="text-align: center  !important;">Annuler</button>
                                     </div>
                                 </div>
                             </form>
