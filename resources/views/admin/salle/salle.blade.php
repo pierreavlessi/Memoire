@@ -77,7 +77,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
-                            <form id="validation" action="{{ route('piece/save') }}" method="POST">
+                            <form id="validation" action="{{ route('salle/save') }}" method="POST">
                                 {{ csrf_field() }}
 
                                 <div class="col-sm-12 ">

@@ -227,7 +227,7 @@
                 </li>
                 <li>
                     <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salle/new') }}" class="sidenav-link "style="color: white;">
+                    <a href="{{ route('typeactivite/new') }}" class="sidenav-link "style="color: white;">
                         {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
                         <i class="sidenav-icon feather icon-zap"style="color: white;"></i>
                         <div>Types d'activité</div>
