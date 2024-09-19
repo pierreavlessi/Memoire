@@ -15,11 +15,11 @@
 <div class="layout-content">
     <!-- [ content ] Start -->
     <div class="container-fluid flex-grow-1 container-p-y">
-        <h4 class="font-weight-bold py-3 mb-0">Ajouter un Type de piece</h4>
+        <h4 class="font-weight-bold py-3 mb-0">Ajouter un Type d'activié</h4>
         <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin/home')}}"><i class="feather icon-home"></i></a></li>
-                <li class="breadcrumb-item">Type de piece</li>
+                <li class="breadcrumb-item">Type d'activité</li>
 
             </ol>
         </div>
@@ -50,11 +50,11 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div>
-                        <form id="validation" action="{{ route('typepieces/save') }}" method="POST">
+                        <form id="validation" action="{{ route('typeactivite/save') }}" method="POST">
                             {{ csrf_field() }}
                          
                             <div class="form-group row">
-                                <label class="col-form-label col-sm-2 text-sm-right">Typepieces</label>
+                                <label class="col-form-label col-sm-2 text-sm-right">Type activité </label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="profil" style="text-transform: uppercase;" name="typepiece" placeholder="typepiece" required>
                                     <div class="clearfix"></div>

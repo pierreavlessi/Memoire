@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" class="material-style layout-fixed">
+<html lang="fr" class="material-style layout-fixed">
 
 <head>
     <title> Gestion des salles - ENA BENIN</title>

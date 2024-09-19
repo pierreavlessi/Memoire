@@ -3,8 +3,7 @@
     <!-- Brand demo (see assets/css/demo/demo.css) -->
     <div class="app-brand demo ">
         <span class=" demo ">
-            <img width="30" src="{{ asset('assets/images/logo-ena.PNG') }}" alt="Brand Logo" class="img-fluid">
-
+            <img width="60" src="{{ asset('assets/images/logo-ena.PNG') }}" alt="Brand Logo" class="img-fluid">
         </span>
         {{-- <a href="#" class="app-brand-text demo sidenav-text font-weight-normal ml-2"
             style="color: white;">{{ Auth::user()->name }}</a> --}}
@@ -14,7 +13,7 @@
     </div>
 
     {{-- <div class="sidenav-divider mt-0 " style="margin-top: -29px !important"></div> --}}
-    <div class="sidenav-divider mt-0 " style="background-color: white !important"></div>
+    <div class="sidenav-divider mt-0 " style="border-color: white !important;"></div>
 
 
     <!-- Links -->
@@ -164,9 +163,7 @@
             </li>
         @endif
 
-        {{-- @if (Auth::user()->role_name == 'etudiant' ||
-                Auth::user()->role_name == 'super_admin' ||
-                Auth::user()->role_name == 'enseignant')
+        {{-- @if (Auth::user()->role_name == 'etudiant' || Auth::user()->role_name == 'super_admin' || Auth::user()->role_name == 'enseignant')
             <li class="sidenav-item">
                 <a href="javascript:" class="sidenav-link sidenav-toggle"style="color: white;">
                     <i class="sidenav-icon feather icon-file"style="color: white;"></i>
@@ -204,7 +201,54 @@
                 <div style="color: white;">Profil utilisateur</div>
 
             </a>
-        </li>--}} 
+        </li> --}}
+
+
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle"style="color: white;">
+                {{-- <i class="sidenav-icon feather icon-clipboard"></i> --}}
+                <i class="sidenav-icon feather icon-settings"style="color: white;"></i>
+                <div style="color: white;">Paramètrage</div>
+            </a>
+            <ul class="sidenav-menu">
+                <li>
+                    <a href="{{ route('salle/new') }}" class="sidenav-link "style="color: white;">
+                        {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
+                        <i class="sidenav-icon feather icon-calendar"style="color: white;"></i>
+                        <div>Années académiques</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('salle/new') }}" class="sidenav-link "style="color: white;">
+                        {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
+                        <i class="sidenav-icon feather icon-home"style="color: white;"></i>
+                        <div>Salles</div>
+                    </a>
+                </li>
+                <li>
+                    <!-- route n'existe pas sans le name du web.php-->
+                    <a href="{{ route('salle/new') }}" class="sidenav-link "style="color: white;">
+                        {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
+                        <i class="sidenav-icon feather icon-zap"style="color: white;"></i>
+                        <div>Types d'activité</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('salle/new') }}" class="sidenav-link "style="color: white;">
+                        {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
+                        <i class="sidenav-icon feather icon-activity"style="color: white;"></i>
+                        <div>Activités</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <!-- route n'existe pas sans le name du web.php-->
+                    <a href="{{ route('salles') }}" class="sidenav-link"style="color: white;">
+                        <i class="sidenav-icon feather icon-copy"style="color: white;"></i>
+                        <div>Groupes Pédagogiques</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
 
         <li class="sidenav-item active">
             <a href="{{ url('user/update/' . auth()->user()->id) }}" class="sidenav-link">
@@ -231,30 +275,6 @@
             </ul>
         </li>
 
-        <li class="sidenav-item">
-            <a href="javascript:" class="sidenav-link sidenav-toggle"style="color: white;">
-                {{-- <i class="sidenav-icon feather icon-clipboard"></i> --}}
-                <i class="sidenav-icon feather icon-file"style="color: white;"></i>
-                <div style="color: white;">Salles</div>
-            </a>
-            <ul class="sidenav-menu">
-                <li>
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salle/new') }}" class="sidenav-link "style="color: white;">
-                        {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
-                        <i class="sidenav-icon feather icon-plus"style="color: white;"></i>
-                        <div>Ajouter</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salles') }}" class="sidenav-link"style="color: white;">
-                        <i class="sidenav-icon feather icon-menu"style="color: white;"></i>
-                        <div>Liste</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
 
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle"style="color: white;">
@@ -280,109 +300,24 @@
                 </li>
             </ul>
         </li>
-               <li class="sidenav-item">
-            <a href="javascript:" class="sidenav-link sidenav-toggle"style="color: white;">
-                {{-- <i class="sidenav-icon feather icon-clipboard"></i> --}}
-                <i class="sidenav-icon feather icon-file"style="color: white;"></i>
-                <div style="color: white;">Statistiques & Rapports</div>
-            </a>
-            <ul class="sidenav-menu">
-                <li>
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salle/new') }}" class="sidenav-link "style="color: white;">
-                        {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
-                        <i class="sidenav-icon feather icon-plus"style="color: white;"></i>
-                        <div>Ajouter</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salles') }}" class="sidenav-link"style="color: white;">
-                        <i class="sidenav-icon feather icon-menu"style="color: white;"></i>
-                        <div>Liste</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="sidenav-item">
-            <a href="javascript:" class="sidenav-link sidenav-toggle"style="color: white;">
-                {{-- <i class="sidenav-icon feather icon-clipboard"></i> --}}
-                <i class="sidenav-icon feather icon-file"style="color: white;"></i>
-                <div style="color: white;">Notifications</div>
-            </a>
-            <ul class="sidenav-menu">
-                <li>
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salle/new') }}" class="sidenav-link "style="color: white;">
-                        {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
-                        <i class="sidenav-icon feather icon-plus"style="color: white;"></i>
-                        <div>Ajouter</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salles') }}" class="sidenav-link"style="color: white;">
-                        <i class="sidenav-icon feather icon-menu"style="color: white;"></i>
-                        <div>Liste</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-               <li class="sidenav-item">
-            <a href="javascript:" class="sidenav-link sidenav-toggle"style="color: white;">
-                {{-- <i class="sidenav-icon feather icon-clipboard"></i> --}}
-                <i class="sidenav-icon feather icon-file"style="color: white;"></i>
-                <div style="color: white;">Paramètres</div>
-            </a>
-            <ul class="sidenav-menu">
-                <li>
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salle/new') }}" class="sidenav-link "style="color: white;">
-                        {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
-                        <i class="sidenav-icon feather icon-plus"style="color: white;"></i>
-                        <div>Activité</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salles') }}" class="sidenav-link"style="color: white;">
-                        <i class="sidenav-icon feather icon-menu"style="color: white;"></i>
-                        <div>Type d'activité</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salles') }}" class="sidenav-link"style="color: white;">
-                        <i class="sidenav-icon feather icon-menu"style="color: white;"></i>
-                        <div>Enseignant</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salles') }}" class="sidenav-link"style="color: white;">
-                        <i class="sidenav-icon feather icon-menu"style="color: white;"></i>
-                        <div>Groupe Pédagogique</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{ route('salles') }}" class="sidenav-link"style="color: white;">
-                        <i class="sidenav-icon feather icon-menu"style="color: white;"></i>
-                        <div>Année Académique</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-       
-         <ul class="sidenav-menu">
-               
-                         </ul>
+  
     </ul>
 </div>
 <!-- [ Layout sidenav ] End -->
 <style>
     .bg-custom-color {
         /* background-color: #003679; */
-        background: linear-gradient(to bottom, #278d27, #014f01); /* Dégradé du haut vers le bas */
+        background: linear-gradient(to bottom, #278d27, #014f01);
+        /* Dégradé du haut vers le bas */
+    }
+
+    .sidenav-divider {
+        border-color: white !important;
+        width: 100%;
+        /* Pour occuper toute la largeur */
+        margin: 0;
+        /* Enlever les marges éventuelles */
+        border-width: 1px;
+        /* Ajuster l'épaisseur de la ligne si nécessaire */
     }
 </style>

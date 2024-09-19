@@ -118,14 +118,23 @@ Route::get('admin/programmation/delete/{id}', [App\Http\Controllers\Programmatio
 
 //Important -----------------------------Activites-----------------------------------------
 //Route::get('profils/new', [App\Http\Controllers\ProfilController::class, 'create'])->name('profils/new'); //New departement
-Route::get('activite/new', [App\Http\Controllers\activiteController::class, 'create'])->name('activite/new'); // Liste departement
-Route::get('activite', [App\Http\Controllers\activiteController::class, 'index'])->name('activite'); // Liste departement
-Route::post('admin/activite/save', [App\Http\Controllers\activiteController::class, 'save'])->name('activite/save'); //Enregistrer departement
+Route::get('activite/new', [App\Http\Controllers\ActiviteController::class, 'create'])->name('activite/new'); // Liste departement
+Route::get('activite', [App\Http\Controllers\ActiviteController::class, 'index'])->name('activite'); // Liste departement
+Route::post('admin/activite/save', [App\Http\Controllers\ActiviteController::class, 'save'])->name('activite/save'); //Enregistrer departement
 //Route::post('departements/edit', [App\Http\Controllers\DepartementController::class, 'edit'])->name('departements/edit'); //Enregistrer departement
-Route::get('admin/activite/update/{id}', [App\Http\Controllers\activiteController::class, 'update']); //Modifier departement
-Route::post('activite/edit', [App\Http\Controllers\activiteController::class, 'edit'])->name('activite/edit'); //Enregistrer departement
-Route::get('admin/activite/delete/{id}', [App\Http\Controllers\activiteController::class, 'delete']);
+Route::get('admin/activite/update/{id}', [App\Http\Controllers\ActiviteController::class, 'update']); //Modifier departement
+Route::post('activite/edit', [App\Http\Controllers\ActiviteController::class, 'edit'])->name('activite/edit'); //Enregistrer departement
+Route::get('admin/activite/delete/{id}', [App\Http\Controllers\ActiviteController::class, 'delete']);
 
+//Important -----------------------------TypeActivites-----------------------------------------
+//Route::get('profils/new', [App\Http\Controllers\ProfilController::class, 'create'])->name('profils/new'); //New departement
+Route::get('typeactivite/new', [App\Http\Controllers\TypeActiviteController::class, 'create'])->name('typeactivite/new'); // Liste departement
+Route::get('typeactivite', [App\Http\Controllers\TypeActiviteController::class, 'index'])->name('typeactivite'); // Liste departement
+Route::post('admin/typeactivite/save', [App\Http\Controllers\TypeActiviteController::class, 'save'])->name('typeactivite/save'); //Enregistrer departement
+//Route::post('departements/edit', [App\Http\Controllers\DepartementController::class, 'edit'])->name('departements/edit'); //Enregistrer departement
+Route::get('admin/typeactivite/update/{id}', [App\Http\Controllers\TypeActiviteController::class, 'update']); //Modifier departement
+Route::post('typeactivite/edit', [App\Http\Controllers\TypeActiviteController::class, 'edit'])->name('typeactivite/edit'); //Enregistrer departement
+Route::get('admin/typeactivite/delete/{id}', [App\Http\Controllers\TypeActiviteController::class, 'delete']);
 
 Route::group(['middleware' => ['role:admin,super_admin']], function () {
 

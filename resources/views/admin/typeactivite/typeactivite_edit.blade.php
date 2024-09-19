@@ -13,17 +13,17 @@
     <div class="layout-content">
         <!-- [ content ] Start -->
         <div class="container-fluid flex-grow-1 container-p-y">
-            <h4 class="font-weight-bold py-3 mb-0">Types de piece / Modifier</h4>
+            <h4 class="font-weight-bold py-3 mb-0">Types d'activite / Modifier</h4>
             <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('admin/home') }}"><i class="feather icon-home"></i></a></li>
-                    <li class="breadcrumb-item">Modifier un Types de piece</li>
-                    <li class="breadcrumb-item active">Modifier un Types de piece</li>
+                    <li class="breadcrumb-item">Modifier un Types d'activite</li>
+                    <li class="breadcrumb-item active">Modifier un Types d'activite</li>
                 </ol>
             </div>
 
             <div class="card mb-4">
-                <h6 class="card-header"><i class="feather icon-user"></i>Modifier un Types de piece </h6>
+                <h6 class="card-header"><i class="feather icon-user"></i>Modifier un Types d'activite</h6>
 
                 <div class="card-body">
 
@@ -45,7 +45,7 @@
                             <div class="clearfix"></div>
                         </div>
                     </div>
-                    <form id="validation" action="{{ route('typepieces/edit') }}" method="POST">
+                    <form id="validation" action="{{ route('typeactivite/edit') }}" method="POST">
 
 
                         {{ csrf_field() }}
@@ -55,10 +55,10 @@
 
         
                         <div class="form-group row">
-                            <label class="col-form-label col-sm-2 text-sm-right">Types de piece</label>
+                            <label class="col-form-label col-sm-2 text-sm-right">Types d'activite</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="typepiece" name="typepiece" style="text-transform: uppercase;" required
-                                    value="{{ $data->typepiece }}">
+                                <input type="text" class="form-control" id="typeactivite" name="typeactivite" style="text-transform: uppercase;" required
+                                    value="{{ $data->libelle_type }}">
                                 <div class="clearfix"></div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                         <div class="form-group row">
                             <label class="col-form-label col-sm-2 text-sm-right"></label>
                             <div class="col-sm-10 d-flex justify-content-between align-items-center">
-                                <a href="{{ route('typepieces') }}" class="m-r-15  btn btn-secondary text-white ">Retour</a>
+                                <a href="{{ route('typeactivite') }}" class="m-r-15  btn btn-secondary text-white ">Retour</a>
 
                                 @if (auth()->user()->role_name == 'super_admin')
                                 <button type="submit" id="update" name="update" class="btn btn-primary">Modifier</button>
@@ -111,7 +111,7 @@
             },
             messages: {
                
-                typepiece: "Ce champs est obligatoire",
+                libelle_type: "Ce champs est obligatoire",
 
             }
         });

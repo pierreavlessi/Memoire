@@ -34,13 +34,15 @@
 
                         <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
                             <thead>
-                            <tr>
-                                <th>Pieces</th>
-                                <th>Type de pièce</th>
-                                <th >Montant</th>
-                                <th class="text-right">Action</th>
-
-                            </tr>
+                                <tr>
+                                    <th>Libellé</th>
+                                    <th>Capacité</th>
+                                    <th>Équipement</th>
+                                    <th>Disponibilité</th>
+                                    <th>Type de Salle</th>
+                                    <th>Bâtiment</th>
+                                    <th>Responsable</th>
+                                </tr>
                             </thead>
                             <tbody>
                             {{-- @foreach ($piece as $item)
