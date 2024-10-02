@@ -42,11 +42,11 @@
     <div class="layout-content">
         <!-- [ content ] Start -->
         <div class="container-fluid flex-grow-1 container-p-y">
-            <h4 class="font-weight-bold py-3 mb-0">Enregistrer une Activité</h4>
+            <h4 class="font-weight-bold py-3 mb-0">Ajouter une Spécialité</h4>
             <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('admin/home') }}"><i class="feather icon-home"></i></a></li>
-                    <li class="breadcrumb-item">Paramétrage / Salles </li>
+                    <li class="breadcrumb-item">Paramétrage / Spécialité</li>
 
                 </ol>
             </div>
@@ -55,7 +55,7 @@
 
                 <div class="col-md-6">
                     <div class="card ">
-                        <h6 class="card-header"><i class="feather icon-home"></i> Ajouter une Activité</h6>
+                        <h6 class="card-header"><i class="feather icon-home"></i> Ajouter une spécialité/h6>
 
                         <div class="card-body">
 
@@ -77,53 +77,18 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
-                            <form id="validation" action="{{ route('activite/save') }}" method="POST">
+                            <form id="validation" action="{{ route('specialite/save') }}" method="POST">
                                 {{ csrf_field() }}
 
                                 <div class="col-sm-12 ">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <label class="col-form-label text-sm-right">Nom de l'activité</label>
-                                            <input type="text" class="form-control" id="libelle"
-                                                style="text-transform: uppercase;" name="libelle" placeholder="INTITULE MATIERE"
+                                            <label class="col-form-label text-sm-right">Spécialité</label>
+                                            <input type="text" class="form-control" id="libelle_spec"
+                                                style="text-transform: uppercase;" name="libelle_spec" placeholder="specialite"
                                                 required>
                                             <div class="clearfix"></div>
                                         </div>
-                                        <div class="col-sm-12">
-                                            <label class="col-form-label  text-sm-right">Type Activité</label>
-                                            <select class="form-control" name="type" id="type" required>
-                                                <option value="" disabled selected>Selectionnez un type d'activité</option>
-                                                <option value="Informatique" selected>Cours</option>
-                                                <option value="Conférence" selected>Conférence</option>
-                                            </select>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="row">
-                                   </div>
-                                </div>
-
-                                <div class="col-sm-12">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <label class="col-form-label  text-sm-right">Statut</label>
-                                            <input type="text" class="form-control" id="statut"
-                                                style="text-transform: uppercase;" name="statut" placeholder="Active"
-                                                required>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12">
-                                    <div class="row">
-                                      <div class="col-sm-12">
-                                        <label class="col-form-label  text-sm-right">Description</label>
-                                        <textarea class="form-control" rows=4 id="profil" name="description" placeholder="Description"></textarea>
-                                        <div class="clearfix"></div>
-                                      </div>
                                     </div>
                                 </div>
                                 <div class=" col-sm-12">
@@ -143,33 +108,26 @@
 
                 <div class="col-md-6">
                   <div class="card mb-4">
-                      <h6 class="card-header"><i class="feather icon-user"></i> Liste des Activités </h6>
+                      <h6 class="card-header"><i class="feather icon-user"></i> Types des Spécialités </h6>
   
                       <div class="card-body">
                           <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
                               <thead>
                               <tr>
-                                  <th>Nom de l'activité</th>
-                                  <th>Description</th>
-                                  <th>Type de l'activité</th>
-                                  <th>Statut</th>
-                                  <th class="text-right">Action</th>
+                                  <th>Spécialité</th>
                                   <th class="text-right">Action</th>
                               </tr>
                               </thead>
                               <tbody>
                                   <tr>
-                                      <td class="id" style="text-transform: uppercase;">Informatique</td>
-                                      <td class="id" style="text-transform: uppercase;">UE</td>
-                                      <td class="id" style="text-transform: uppercase;">Cours</td>
-                                      <td class="id" style="text-transform: uppercase;">Fait</td>
+                                      <td class="id" style="text-transform: uppercase;">Administration Generale</td>
                                       <td class="text-right">
-                                        <a href="" class="m-r-15 text-muted userUpdate">
-                                            <i class="fa fa-edit" style="color: #dbb419;"></i>
+                                          <a href="" class="m-r-15 text-muted userUpdate">
+                                              <i class="fa fa-edit" style="color: #dbb419;"></i>
+                                          </a>
+                                          <a href="" class="m-r-15 text-muted userUpdate">
+                                            <i class="fa fa-eye" style="color: #2196f3;"></i>
                                         </a>
-                                        <a href="" class="m-r-15 text-muted userUpdate">
-                                          <i class="fa fa-eye" style="color: #2196f3;"></i>
-                                      </a>
                                           <a href="" onclick="return confirm('Etes vous sûr de vouloir supprimer ceci ?')"><i class="fa fa-trash" style="color: red;"></i></a>
                                       </td>
                                   </tr>

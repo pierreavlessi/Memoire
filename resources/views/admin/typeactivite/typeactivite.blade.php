@@ -82,13 +82,11 @@
 
                                 <div class="col-sm-12 ">
                                     <div class="row">
-                                        <div class="col-sm-6">
-                                            <label class="col-form-label  text-sm-right">Type Activité</label>
-                                            <select class="form-control" name="libelle_type" id="libelle_type" required>
-                                                <option value="" disabled selected>Selectionnez un type activité</option>
-                                                <option value="Cours" selected>Cours</option>
-                                                <option value="Séminaire" selected>Conférence</option>
-                                            </select>
+                                        <div class="col-sm-12">
+                                            <label class="col-form-label text-sm-right">Type Activité</label>
+                                            <input type="text" class="form-control" id="libelle_type"
+                                                style="text-transform: uppercase;" name="libelle_type" placeholder="type"
+                                                required>
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>

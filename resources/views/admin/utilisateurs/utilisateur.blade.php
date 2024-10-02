@@ -6,6 +6,33 @@
             color: red;
             border-color: red;
             font-weight: 900;
+            th{
+          text-align: left;
+        }
+
+.btn-primary {
+    background: linear-gradient(to right, #3ead3e 1%, #014f01);
+    /* Dégradé qui part de la droite */
+    border: none;
+    color: white;
+}
+.btn-primary:hover {
+    background: linear-gradient(to right, #3a983a 1%, #024602); /* Changement de couleur au survol */
+    cursor: pointer; /* Changer le curseur pour indiquer que c'est cliquable */
+}
+.btn-secondary {
+    background: linear-gradient(to right, #828482 1%, #585858);
+    /* Dégradé qui part de la droite */
+    border: none;
+    color: white;
+}
+
+ 
+.page-item.active .page-link, .page-item.active .page-link:hover, .page-item.active .page-link:focus, .pagination li.active > a:not(.page-link), .pagination li.active > a:not(.page-link):hover, .pagination li.active > a:not(.page-link):focus {
+    border-color: #087a08 !important;
+    /* background-color: #087a08 !important; */
+    background: linear-gradient(to right, #3ead3e 1%, #014f01) !important;
+    color: #fff !important;
         }
     </style>
 
@@ -13,18 +40,18 @@
     <div class="layout-content">
         <!-- [ content ] Start -->
         <div class="container-fluid flex-grow-1 container-p-y">
-            <h4 class="font-weight-bold py-3 mb-0">Utilisateur</h4>
+            <h4 class="font-weight-bold py-3 mb-0">Utilisateurs</h4>
             <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="feather icon-home"></i></a></li>
-                    <li class="breadcrumb-item">Utilisateur</li>
+                    <li class="breadcrumb-item">Utilisateurs</li>
 
                 </ol>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card mb-4">
-                        <h6 class="card-header"><i class="feather icon-user"></i> Utilisateur Infomation</h6>
+                        <h6 class="card-header"><i class="feather icon-user"></i> Utilisateur Infomations</h6>
 
                         <div class="card-body">
                             <div class="form-group row">
@@ -56,8 +83,8 @@
                                 <div class="form-group row">
                                     <label class="col-form-label col-sm-2 text-sm-right">Nom</label>
                                     <div class="col-sm-10">
-                                        <input id="name" type="text" style="text-transform: uppercase;"
-                                            class="form-control @error('name') is-invalid @enderror" name="name"
+                                        <input id="noù" type="text" style="text-transform: uppercase;"
+                                            class="form-control @error('name') is-invalid @enderror" name="noù"
                                             value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Nom">
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
@@ -70,11 +97,50 @@
                                 <div class="form-group row">
                                     <label class="col-form-label col-sm-2 text-sm-right">Prénom</label>
                                     <div class="col-sm-10">
-                                        <input id="prename" type="text"
-                                            class="form-control @error('prename') is-invalid @enderror" name="prename"
+                                        <input id="prenom" type="text"
+                                            class="form-control @error('prename') is-invalid @enderror" name="prenom"
                                             value="{{ old('prename') }}" autocomplete="prename" autofocus
                                             placeholder="Prénom">
                                         @error('prename')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-sm-2 text-sm-right">Mot de Passe</label>
+                                    <div class="col-sm-10">
+                                        <input id="mot_pass" type="password"
+                                            class="form-control @error('password') is-invalid @enderror" name="mot_"
+                                            autocomplete="new-password" placeholder="Entrer password">
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-sm-2 text-sm-right">Confirmation Mot de Passe</label>
+                                    <div class="col-sm-10">
+                                        <input id="password-confirm" type="password" class="form-control"
+                                            name="password_confirmation" autocomplete="new-password"
+                                            placeholder="Password confirmation">
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label class="col-form-label col-sm-2 text-sm-right">Rôle</label>
+                                    <div class="col-sm-10">
+                                        <input id="role" type="text"
+                                            class="form-control @error('role') is-invalid @enderror" name="prename"
+                                            value="{{ old('role') }}" autocomplete="role" autofocus
+                                            placeholder="Role de l'utilisateur">
+                                        @error('role')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -111,13 +177,16 @@
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
+                              
+                               
                                 <div class="form-group row">
-                                    <label class="col-form-label col-sm-2 text-sm-right">Password</label>
+                                    <label class="col-form-label col-sm-2 text-sm-right">Type Utlisateur</label>
                                     <div class="col-sm-10">
-                                        <input id="password" type="password"
-                                            class="form-control @error('password') is-invalid @enderror" name="password"
-                                            autocomplete="new-password" placeholder="Enter password">
-                                        @error('password')
+                                        <input id="prename" type="text"
+                                            class="form-control @error('type') is-invalid @enderror" name="type"
+                                            value="{{ old('prename') }}" autocomplete="type" autofocus
+                                            placeholder="type de l'utilisateur">
+                                        @error('type')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -125,22 +194,21 @@
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-form-label col-sm-2 text-sm-right">Password Confirmation</label>
-                                    <div class="col-sm-10">
-                                        <input id="password-confirm" type="password" class="form-control"
-                                            name="password_confirmation" autocomplete="new-password"
-                                            placeholder="Password confirmation">
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
+                               
                                 <div class="form-group row">
                                     <label class="col-form-label col-sm-2 text-sm-right"></label>
                                     <div class="col-sm-10 d-flex justify-content-between align-items-center">
                                         <button type="reset" class="btn btn-secondary">Annuler</button>
-                                        @if (auth()->user()->role_name === 'super_admin')
-                                            <button type="submit" class="btn btn-primary">Enregistrer</button>
-                                            <!-- Bouton "Enregistrer" activé pour super_admin -->
+                                        @if (auth()->utilisateur()->role_name === 'super_admin')
+                                        <div class=" col-sm-12">
+                                            <div class="row mt-3">
+                                              <div class=" col-sm-12 d-flex justify-content-between align-items-center">
+                                                <button type="reset" class="btn btn-secondary">Annuler</button>
+                                                <button type="submit" class="btn btn-primary">Enregistrer</button>
+                                            </div>
+                                          </div>
+                                       
+                                        </div>
                                         @else
                                             <button type="submit" class="btn btn-primary" disabled>Enregistrer</button>
                                             <!-- Bouton "Enregistrer" désactivé pour les autres -->
