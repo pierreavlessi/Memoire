@@ -30,7 +30,7 @@
                                         <div class="lnr lnr-user display-4 text-primary"></div>
                                         <div class="ml-3">
                                             <div class="small">
-                                                <h6>Total Salles <br> <br> </h6>
+                                                <h6>Nombre Total Salles <br> <br> </h6>
                                             </div>
                                             <div class="text-large">{{ $totalEtudiant }}</div>
                                         </div>
@@ -53,7 +53,7 @@
                                         <div class="lnr lnr-user display-4 text-primary"></div>
                                         <div class="ml-3">
                                             <div class="small">
-                                                <h6>Total Programmations<br> <br> </h6>
+                                                <h6>Salles Programmées<br> <br> </h6>
                                             </div>
                                             <div class="text-large">{{ $totalEnseignant }}</div>
                                         </div>
@@ -77,7 +77,7 @@
                                         <div class="lnr lnr-file-empty display-4 text-primary"></div>
                                         <div class="ml-3">
                                             <div class="small">
-                                                <h6>Total demandes/jour <br> <br> </h6>
+                                                <h6>Salles Disponibles <br> <br> </h6>
                                             </div>
                                             <div class="text-large">{{ $totalDemande }}</div>
                                         </div>
@@ -100,7 +100,7 @@
                                         <div class="lnr lnr-file-empty display-4 text-primary"></div>
                                         <div class="ml-3">
                                             <div class="small">
-                                                <h6>Total suivi demande/jour <br> <br> </h6>
+                                                <h6>Total Programmations<br> <br> </h6>
                                             </div>
                                             <div class="text-large">{{ $totalSuiviDemande }}</div>
                                         </div>

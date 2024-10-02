@@ -42,11 +42,11 @@
     <div class="layout-content">
         <!-- [ content ] Start -->
         <div class="container-fluid flex-grow-1 container-p-y">
-            <h4 class="font-weight-bold py-3 mb-0">Ajouter une Spécialité</h4>
+            <h4 class="font-weight-bold py-3 mb-0">Enregistrer l'année d'étude</h4>
             <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('admin/home') }}"><i class="feather icon-home"></i></a></li>
-                    <li class="breadcrumb-item">Paramétrage / Spécialité</li>
+                    <li class="breadcrumb-item">Paramétrage / Salles </li>
 
                 </ol>
             </div>
@@ -55,7 +55,7 @@
 
                 <div class="col-md-6">
                     <div class="card ">
-                        <h6 class="card-header"><i class="feather icon-home"></i> Ajouter une spécialité/h6>
+                        <h6 class="card-header"><i class="feather icon-home"></i> Ajouter une Année d'étude</h6>
 
                         <div class="card-body">
 
@@ -77,15 +77,15 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
-                            <form id="validation" action="{{ route('specialite/save') }}" method="POST">
+                            <form id="validation" action="{{ route('anneeetude/save') }}" method="POST">
                                 {{ csrf_field() }}
 
                                 <div class="col-sm-12 ">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <label class="col-form-label text-sm-right">Spécialité</label>
-                                            <input type="text" class="form-control" id="libelle_spec"
-                                                style="text-transform: uppercase;" name="libelle_spec" placeholder="specialite"
+                                            <label class="col-form-label text-sm-right">Année d'Etude</label>
+                                            <input type="text" class="form-control" id="annee"
+                                                style="text-transform: uppercase;" name="annee" placeholder="Entrer Annee"
                                                 required>
                                             <div class="clearfix"></div>
                                         </div>
@@ -108,19 +108,19 @@
 
                 <div class="col-md-6">
                   <div class="card mb-4">
-                      <h6 class="card-header"><i class="feather icon-user"></i> Liste des Spécialités </h6>
+                      <h6 class="card-header"><i class="feather icon-user"></i> Année d'Etude </h6>
   
                       <div class="card-body">
                           <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
                               <thead>
                               <tr>
-                                  <th>Spécialité</th>
+                                  <th>Année d'Etude</th>
                                   <th class="text-right">Action</th>
                               </tr>
                               </thead>
                               <tbody>
                                   <tr>
-                                      <td class="id" style="text-transform: uppercase;">Administration Generale</td>
+                                      <td class="id" style="text-transform: uppercase;">1ère Année</td>
                                       <td class="text-right">
                                           <a href="" class="m-r-15 text-muted userUpdate">
                                               <i class="fa fa-edit" style="color: #dbb419;"></i>
