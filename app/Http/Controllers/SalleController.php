@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Salle;
+use App\Models\TypeSalle;
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
 class SalleController extends Controller
@@ -10,7 +13,12 @@ class SalleController extends Controller
     //
     public function create()
     {
-        return view('admin.salle.salle');
+        // dd(DB::select("select type from types_salles"));
+
+        $typesSalles = TypeSalle::all();
+
+
+        return view('admin.salle.salle', compact("typesSalles"));
     }
 
     public function index()
