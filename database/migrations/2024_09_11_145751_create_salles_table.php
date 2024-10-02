@@ -15,15 +15,19 @@ class CreateSallesTable extends Migration
     public function up()
     {
         Schema::create('salles', function (Blueprint $table) {
-            $table->id('id_salle');
-            $table->string('libelle_salle');
-            $table->string('capacite');
-            $table->string('equipement');
+            $table->id();
+            $table->string('libelle');
+            $table->integer('capacite');
+            $table->string('equipement')->nullable();
             $table->boolean('disponibilite');
-            $table->string('type_salle');
             $table->string('batiment');
             $table->string('responsable');
+            $table->unsignedBigInteger('type_salle_id'); // la colonne qui va contenir la clé étrangère
             $table->timestamps();
+
+            // Définir la clé étrangère qui fait référence à une table "types_salles"
+            $table->foreign('type_salle_id')->references('id')->on('types_salles')->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

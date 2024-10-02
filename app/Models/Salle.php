@@ -15,11 +15,11 @@ class salle extends Model
 
     // Les attributs qui sont mass assignable.
     protected $fillable = [
-        'libelle_salle',
+        'libelle',
         'capacite',
         'equipement',
         'disponibilite',
-        'type_salle',
+        'type_salle_id',
         'batiment',
         'responsable',
     ];
