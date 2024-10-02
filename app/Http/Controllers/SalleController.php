@@ -2,33 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Salle;
-
+use Illuminate\Http\Request;
 
 class SalleController extends Controller
 {
     //
     public function create()
-   {
+    {
+        return view('admin.salle.salle');
+    }
 
-   
-       return view('admin.salle.salle');
-      }
-
-      public function index()
-      {
-        //
+    public function index()
+    {
         //$Profils = Profil::latest()->get();
         $salle = Salle::all();
         return view("admin.salle.index", compact("salle"));
-      }
+    }
 
-      public function save(Request $request)
-      
+    public function save(Request $request)
     {
-      $salle = $request->salle;
-      $findsalle = Salles::where('salle', $salle)->first();
+        $salle = $request->salle;
+        $findsalle = Salles::where('salle', $salle)->first();
         // Valider les données entrantes
         $request->validate([
             'libelle_salle' => 'required|string|max:255',
@@ -49,4 +44,4 @@ class SalleController extends Controller
         // Rediriger ou retourner une réponse
         return redirect()->route('salles')->with('success', 'Salle créée avec succès.');
     }
-    }
+}
