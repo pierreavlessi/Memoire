@@ -93,8 +93,8 @@
                                             <label class="col-form-label  text-sm-right">Type Salle</label>
                                             <select class="form-control" name="type_salle" id="type_salle" required>
                                                 <option value="" disabled selected>Selectionnez un type</option>
-                                                <option value="Informatique" selected>Informatique</option>
-                                                <option value="Conférence" selected>Conférence</option>
+                                                <option value="1" selected>Informatique</option>
+                                                <option value="2" selected>Conférence</option>
                                             </select>
                                             <div class="clearfix"></div>
                                         </div>
@@ -135,7 +135,7 @@
                                     <div class="row">
                                       <div class="col-sm-12">
                                         <label class="col-form-label  text-sm-right">Description/Equipements</label>
-                                        <textarea class="form-control" rows=4 id="profil" name="description" placeholder="Description"></textarea>
+                                        <textarea class="form-control" rows=4 id="equipement" name="equipement" placeholder="Description"></textarea>
                                         <div class="clearfix"></div>
                                       </div>
                                     </div>

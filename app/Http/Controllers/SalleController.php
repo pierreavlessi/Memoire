@@ -22,26 +22,44 @@ class SalleController extends Controller
 
     public function save(Request $request)
     {
-        $salle = $request->salle;
-        $findsalle = Salles::where('salle', $salle)->first();
         // Valider les données entrantes
         $request->validate([
-            'libelle_salle' => 'required|string|max:255',
+            'libelle' => 'required|string|max:255',
             'capacite' => 'required|integer',
             'equipement' => 'nullable|string',
-            'disponibilite' => 'required|boolean',
-            'type_salle' => 'required|string|max:255',
+            'type_salle' => 'required',
             'batiment' => 'required|string|max:255',
             'responsable' => 'nullable|string|max:255',
         ]);
+   
+    
+        // Vérifier si la salle existe déjà
+        $findsalle = Salle::where('libelle', $request->libelle)->first();
+        
+        if ($findsalle) {
+            // Si la salle existe, retourner un message d'erreur
+            return redirect()->back()->with('error', 'Cette salle existe déjà.');
+          
+        }
+    
 
+    
         // Créer une nouvelle instance de Salle avec les données validées
-        $salle = new Salle($request->all());
-
+        $salle = new Salle([
+            'libelle' => $request->libelle,
+            'capacite' => $request->capacite,
+            'equipement' => $request->equipement,
+            'disponibilite' => 0, // Assigner la disponibilité par défaut
+            'type_salle_id' => $request->type_salle,
+            'batiment' => $request->batiment,
+            'responsable' => $request->responsable,
+        ]);
+    
         // Sauvegarder l'instance dans la base de données
         $salle->save();
-
+    
         // Rediriger ou retourner une réponse
-        return redirect()->route('salles')->with('success', 'Salle créée avec succès.');
+        return redirect()->back()->with('insert', 'Salle créée avec succès.');
     }
+    
 }

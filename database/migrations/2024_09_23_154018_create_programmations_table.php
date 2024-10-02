@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('id_salle');
-            $table->unsignedBigInteger('id_util');
+            $table->unsignedBigInteger('id_utilisateur');
             $table->unsignedBigInteger('id_activite');
             $table->date('date');
             $table->time('heure_deb');
@@ -24,9 +24,9 @@ return new class extends Migration
             $table->text('description')->nullable();
 
             // Foreign keys
-            $table->foreign('id_salle')->references('id_salle')->on('salle');
-            $table->foreign('id_util')->references('id_util')->on('utilisateur');
-            $table->foreign('id_activite')->references('id_activite')->on('activite');
+            $table->foreign('id_salle')->references('id')->on('salles');
+            $table->foreign('id_utilisateur')->references('id')->on('utilisateurs');
+            $table->foreign('id_activite')->references('id')->on('activites');
         });
     }
 
