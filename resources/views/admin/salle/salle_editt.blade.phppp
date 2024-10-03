@@ -1,0 +1,150 @@
+@extends('admin.layouts.master')
+<style>
+    .error {
+        color: red;
+        border-color: red;
+        font-weight: 900;
+    }
+</style>
+
+@section('content')
+    <!-- [ Layout content ] Start -->
+    <div class="layout-content">
+        <!-- [ content ] Start -->
+        <div class="container-fluid flex-grow-1 container-p-y">
+            <h4 class="font-weight-bold py-3 mb-0">Piece / Modifier</h4>
+            <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('admin/home') }}"><i class="feather icon-home"></i></a></li>
+                    <li class="breadcrumb-item">Salle</li>
+                    <li class="breadcrumb-item active">Modifier une Salle</li>
+                </ol>
+            </div>
+
+            <div class="card mb-4">
+                <h6 class="card-header"><i class="feather icon-home"></i> Modifier une Salle </h6>
+
+                <div class="card-body">
+
+                  <div class="form-group row">
+                      <div class="col-sm-12">
+                          @if (\Session::has('insert'))
+                              <div id="hide-message" class="alert alert-success alert-dismissible fade show">
+                                  <i class="feather icon-check-circle" style="font-size:1em"></i>
+                                  {!! \Session::get('insert') !!}
+                              </div>
+                          @endif
+
+                          @if (\Session::has('error'))
+                              <div id="hide-message" class="alert alert-danger alert-dismissible fade show">
+                                  <i class="feather icon-check-circle" style="font-size:1em"></i>
+                                  {!! \Session::get('error') !!}
+                              </div>
+                          @endif
+                          <div class="clearfix"></div>
+                      </div>
+                  </div>
+                  <form id="validation" action="{{ route('salle.update', $salle->id) }}" method="POST">
+                      @csrf
+                      @method('PUT') <!-- Indique que cette requête est une mise à jour -->
+
+                      <div class="col-sm-12 ">
+                          <div class="row">
+                              <div class="col-sm-6">
+                                  <label class="col-form-label text-sm-right">Désignation</label>
+                                  <input type="text" class="form-control" id="libelle"
+                                      style="text-transform: uppercase;" name="libelle" placeholder="SALLE A"
+                                      value="{{ old('libelle', $salle->libelle) }}" required>
+                                  <div class="clearfix"></div>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label class="col-form-label text-sm-right">Type Salle</label>
+                                  <select class="form-control" name="type_salle" id="type_salle" required>
+                                      <option value="" disabled>Selectionnez un type</option>
+                                      @foreach ($typesSalles as $typeSalle)
+                                          <option value="{{ $typeSalle->id }}"
+                                              {{ $typeSalle->id == $salle->type_salle_id ? 'selected' : '' }}>
+                                              {{ $typeSalle->type }}
+                                          </option>
+                                      @endforeach
+                                  </select>
+                                  <div class="clearfix"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-12">
+                          <div class="row">
+                              <div class="col-sm-6">
+                                  <label class="col-form-label text-sm-right">Capacité</label>
+                                  <input type="number" class="form-control" id="capacite"
+                                      style="text-transform: uppercase;" name="capacite" placeholder="100"
+                                      value="{{ old('capacite', $salle->capacite) }}" required>
+                                  <div class="clearfix"></div>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label class="col-form-label text-sm-right">Bâtiment</label>
+                                  <input type="text" class="form-control" id="batiment"
+                                      style="text-transform: uppercase;" name="batiment" placeholder="Bâtiment A2"
+                                      value="{{ old('batiment', $salle->batiment) }}" required>
+                                  <div class="clearfix"></div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-sm-12">
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <label class="col-form-label text-sm-right">Responsable</label>
+                                  <input type="text" class="form-control" id="responsable"
+                                      style="text-transform: uppercase;" name="responsable"
+                                      value="{{ old('responsable', $salle->responsable) }}" placeholder="DOSSOU JEAN">
+                                  <div class="clearfix"></div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-sm-12">
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <label class="col-form-label text-sm-right">Description/Equipements</label>
+                                  <textarea class="form-control" rows=4 id="equipement" name="equipement" placeholder="Description">{{ old('equipement', $salle->equipement) }}</textarea>
+                                  <div class="clearfix"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-12">
+                          <div class="row mt-3">
+                              <div class="col-sm-12 d-flex justify-content-between align-items-center">
+                                  <button type="reset" class="btn btn-secondary">Annuler</button>
+                                  <button type="submit" class="btn btn-primary">Modifier</button>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+                </div>
+            </div>
+
+            <!-- [ content ] End -->
+
+        </div>
+
+
+        <!-- [ Layout footer ] Start -->
+
+        <!-- [ Layout footer ] End -->
+    </div>
+
+    <!-- [ Layout content ] Start -->
+@endsection
+@section('script')
+    {{-- hide message js --}}
+    <script src="{{ asset('assets/js/jquery.validate.js') }}"></script>
+
+
+    <script>
+        $('#hide-message').show();
+        setTimeout(function() {
+            $('#hide-message').hide();
+        }, 5000);
+    </script>
+@endsection

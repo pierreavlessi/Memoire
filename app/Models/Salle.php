@@ -31,4 +31,9 @@ class salle extends Model
     protected $casts = [
         'disponibilite' => 'boolean',
     ];
+
+    public function typeSalle()
+    {
+        return $this->belongsTo(TypeSalle::class, 'type_salle_id');
+    }
 }

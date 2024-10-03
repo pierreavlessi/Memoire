@@ -183,23 +183,32 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="id" style="text-transform: uppercase;">SALLE A</td>
-                                        <td class="id" style="text-transform: uppercase;">Informatique</td>
-                                        <td class="id" style="text-transform: uppercase;">100</td>
-                                        <td class="id" style="text-transform: uppercase;">A2</td>
-                                        <td class="text-right">
-                                            <a href="" class="m-r-15 text-muted userUpdate">
-                                                <i class="fa fa-edit" style="color: #dbb419;"></i>
-                                            </a>
-                                            <a href="" class="m-r-15 text-muted userUpdate">
-                                                <i class="fa fa-eye" style="color: #2196f3;"></i>
-                                            </a>
-                                            <a href=""
-                                                onclick="return confirm('Etes vous sûr de vouloir supprimer ceci ?')"><i
-                                                    class="fa fa-trash" style="color: red;"></i></a>
-                                        </td>
-                                    </tr>
+                                    
+                                    @foreach ($salles as $item)
+                                        <tr>
+                                            <td class="id" style="text-transform: uppercase;">{{ $item->libelle }}
+                                            </td>
+                                            <td class="id" style="text-transform: uppercase;">
+                                                {{ $item->typeSalle->type }}</td>
+                                            <td class="id" style="text-transform: uppercase;">{{ $item->capacite }}
+                                            </td>
+                                            <td class="id" style="text-transform: uppercase;">{{ $item->batiment }}
+                                            </td>
+                                            <td class="text-right">
+
+                                                <a href="{{ route('salle.edit', $item->id) }}"
+                                                    class="m-r-15 text-muted userUpdate">
+                                                    <i class="fa fa-edit" style="color: #dbb419;"></i>
+                                                </a>
+                                                <a href="" class="m-r-15 text-muted userUpdate">
+                                                    <i class="fa fa-eye" style="color: #2196f3;"></i>
+                                                </a>
+                                                <a href="{{ url('admin/salle/delete/' . $item->id) }}"
+                                                    onclick="return confirm('Etes vous sûr de vouloir supprimer ceci ?')"><i
+                                                        class="fa fa-trash" style="color: red;"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
 

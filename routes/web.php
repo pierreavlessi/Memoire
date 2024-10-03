@@ -112,10 +112,19 @@ Route::get('salle/new', [App\Http\Controllers\SalleController::class, 'create'])
 Route::get('salles', [App\Http\Controllers\SalleController::class, 'index'])->name('salles'); // Liste departement
 Route::post('admin/salle/save', [App\Http\Controllers\SalleController::class, 'save'])->name('salle/save'); //Enregistrer departement
 //Route::post('departements/edit', [App\Http\Controllers\DepartementController::class, 'edit'])->name('departements/edit'); //Enregistrer departement
-Route::get('admin/salle/update/{id}', [App\Http\Controllers\SalleController::class, 'update']); //Modifier departement
-Route::post('salle/edit', [App\Http\Controllers\SalleController::class, 'edit'])->name('salle/edit'); //Enregistrer departement
+Route::get('admin/salle/{id}/edit', [App\Http\Controllers\SalleController::class, 'edit'])->name('salle.edit');
+// Route::get('admin/salle/update/{id}', [App\Http\Controllers\SalleController::class, 'update']); //Modifier departement
+Route::put('admin/salle/{id}/update', [App\Http\Controllers\SalleController::class, 'update'])->name('salle.update'); //Enregistrer departement
 Route::get('admin/salle/delete/{id}', [App\Http\Controllers\SalleController::class, 'delete']);
 
+// // Route pour afficher le formulaire de modification d'une salle
+// Route::get('/salle/{id}/edit', [SalleController::class, 'edit'])->name('salle.edit');
+
+// // Route pour mettre à jour une salle
+// Route::put('/salle/{id}', [SalleController::class, 'update'])->name('salle.update');
+
+// // Route pour supprimer une salle
+// Route::delete('/salle/{id}', [SalleController::class, 'destroy'])->name('salle.destroy');
 
 //Important -----------------------------Programmations-----------------------------------------
 //Route::get('profils/new', [App\Http\Controllers\ProfilController::class, 'create'])->name('profils/new'); //New departement
